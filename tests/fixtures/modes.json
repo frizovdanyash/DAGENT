@@ -1,0 +1,173 @@
+{
+ "modes": [
+  {
+   "id": "chat",
+   "icon": "chat",
+   "name": "Общение",
+   "tagline": "Просто разговор, без доступа к системе",
+   "description": "Модель отвечает текстом и не может трогать файлы или запускать команды. Безопасный режим для вопросов, текстов, идей и перевода.",
+   "accent": "#4ea1ff",
+   "tools": [],
+   "auto_approve": false,
+   "defaults": {
+    "temperature": 0.8,
+    "max_iterations": 1,
+    "max_tokens": 2048
+   }
+  },
+  {
+   "id": "assistant",
+   "icon": "wand",
+   "name": "Ассистент",
+   "tagline": "Полный доступ, каждое действие подтверждается",
+   "description": "Агент умеет всё: читать и создавать файлы, запускать команды, искать в интернете. Опасные шаги показываются в окне подтверждения - вы всегда контролируете процесс.",
+   "accent": "#7c5cff",
+   "tools": [
+    "list_dir",
+    "read_file",
+    "file_info",
+    "search_files",
+    "workspace_tree",
+    "write_file",
+    "edit_file",
+    "create_dir",
+    "move_path",
+    "copy_path",
+    "remember",
+    "delete_path",
+    "run_command",
+    "python_run",
+    "web_fetch",
+    "ask_user",
+    "update_plan"
+   ],
+   "auto_approve": false,
+   "defaults": {
+    "temperature": 0.5,
+    "max_iterations": 12,
+    "max_tokens": 2048
+   }
+  },
+  {
+   "id": "autopilot",
+   "icon": "rocket",
+   "name": "Автопилот",
+   "tagline": "Работает сам, без остановок на подтверждения",
+   "description": "Агент выполняет длинные задачи самостоятельно: много шагов, файлов и команд подряд. Запрещённые команды и выход за пределы рабочей папки всё равно блокируются.",
+   "accent": "#ff7a45",
+   "tools": [
+    "list_dir",
+    "read_file",
+    "file_info",
+    "search_files",
+    "workspace_tree",
+    "write_file",
+    "edit_file",
+    "create_dir",
+    "move_path",
+    "copy_path",
+    "remember",
+    "delete_path",
+    "run_command",
+    "python_run",
+    "web_fetch",
+    "update_plan"
+   ],
+   "auto_approve": true,
+   "defaults": {
+    "temperature": 0.4,
+    "max_iterations": 30,
+    "max_tokens": 3072
+   }
+  },
+  {
+   "id": "code",
+   "icon": "code",
+   "name": "Код",
+   "tagline": "Разработка: анализ проекта, правки, тесты, git",
+   "description": "Режим программиста. Агент изучает структуру проекта, пишет и рефакторит код, запускает тесты и сборку, работает с git - и объясняет каждое изменение.",
+   "accent": "#35d07f",
+   "tools": [
+    "list_dir",
+    "read_file",
+    "file_info",
+    "search_files",
+    "workspace_tree",
+    "write_file",
+    "edit_file",
+    "create_dir",
+    "move_path",
+    "copy_path",
+    "remember",
+    "delete_path",
+    "run_command",
+    "python_run",
+    "ask_user",
+    "update_plan"
+   ],
+   "auto_approve": false,
+   "defaults": {
+    "temperature": 0.25,
+    "max_iterations": 25,
+    "max_tokens": 4096
+   }
+  },
+  {
+   "id": "terminal",
+   "icon": "terminal",
+   "name": "Терминал",
+   "tagline": "Команды, установка, диагностика системы",
+   "description": "Упор на консоль: агент строит цепочки команд, ставит пакеты, ищет ошибки в логах и настраивает окружение. Файлы редактирует только когда это нужно.",
+   "accent": "#00c2a8",
+   "tools": [
+    "list_dir",
+    "read_file",
+    "file_info",
+    "search_files",
+    "workspace_tree",
+    "run_command",
+    "python_run",
+    "write_file",
+    "edit_file",
+    "create_dir",
+    "move_path",
+    "copy_path",
+    "remember",
+    "web_fetch",
+    "ask_user",
+    "update_plan"
+   ],
+   "auto_approve": false,
+   "defaults": {
+    "temperature": 0.2,
+    "max_iterations": 20,
+    "max_tokens": 2048
+   }
+  },
+  {
+   "id": "analyst",
+   "icon": "search",
+   "name": "Аналитик",
+   "tagline": "Только чтение: исследование и отчёты",
+   "description": "Агент читает файлы, ищет по содержимому и собирает выводы в отчёт. Ничего не изменяет и не удаляет - идеально для аудита и знакомства с проектом.",
+   "accent": "#f5b942",
+   "tools": [
+    "list_dir",
+    "read_file",
+    "file_info",
+    "search_files",
+    "workspace_tree",
+    "web_fetch",
+    "remember",
+    "update_plan"
+   ],
+   "auto_approve": true,
+   "defaults": {
+    "temperature": 0.3,
+    "max_iterations": 15,
+    "max_tokens": 3072
+   }
+  }
+ ],
+ "active": "assistant"
+}

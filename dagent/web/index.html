@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="midnight" data-density="comfortable" data-fx="aurora">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark light" />
+<meta name="description" content="DAGENT - local AI agent with a graphical interface. Any model via API or GGUF." />
+<title>DAGENT - your local AI agent</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/css/tokens.css" />
+<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="/css/layout.css" />
+<link rel="stylesheet" href="/css/components.css" />
+</head>
+<body>
+
+<!-- animated background layers -->
+<div class="bg-fx" id="bgFx" aria-hidden="true">
+  <div class="bg-aurora a1"></div>
+  <div class="bg-aurora a2"></div>
+  <div class="bg-aurora a3"></div>
+  <div class="bg-grid"></div>
+  <canvas id="bgCanvas"></canvas>
+</div>
+
+<div class="app" id="app">
+
+  <!-- ============================ SIDEBAR ============================ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-logo" id="brandLogo" title="DAGENT">
+        <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="var(--accent)" />
+              <stop offset="100%" stop-color="var(--accent-2)" />
+            </linearGradient>
+          </defs>
+          <path d="M16 2.5 28 9v14L16 29.5 4 23V9z" fill="none" stroke="url(#lg)" stroke-width="2.2" stroke-linejoin="round"/>
+          <circle cx="16" cy="16" r="4.2" fill="url(#lg)"/>
+          <path d="M16 6.5v4M16 21.5v4M7.5 11l3.5 2M21 19l3.5 2M24.5 11l-3.5 2M11 19l-3.5 2" stroke="url(#lg)" stroke-width="1.6" stroke-linecap="round" opacity=".75"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">DAGENT</div>
+        <div class="brand-sub" id="brandSub">local agent</div>
+      </div>
+      <button class="icon-btn ghost" id="collapseSidebar" title="Collapse sidebar (Ctrl+B)" data-i18n-title="sidebar.collapse">
+        <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <button class="btn accent new-session" id="newSessionBtn">
+      <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span data-i18n="sidebar.new_session">New session</span>
+      <kbd id="kbdNewSession">Ctrl N</kbd>
+    </button>
+
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="sessionSearch" class="search-input" type="search" placeholder="Search sessions..." data-i18n-placeholder="sidebar.search_placeholder" autocomplete="off" />
+    </div>
+
+    <div class="sessions" id="sessionsList" role="list"></div>
+
+    <div class="workspace-card" id="workspaceCard">
+      <div class="workspace-head">
+        <svg viewBox="0 0 24 24"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h3.2a2 2 0 0 1 1.5.7l1 1.2a2 2 0 0 0 1.5.7h5.8A2.5 2.5 0 0 1 21 10v7a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span data-i18n="sidebar.workspace">Workspace</span>
+        <button class="icon-btn tiny" id="openWorkspaceBtn" title="Open in file manager">
+          <svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn tiny" id="changeWorkspaceBtn" title="Change workspace folder">
+          <svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="workspace-path" id="workspacePath" title="">-</div>
+      <div class="workspace-meta" id="workspaceMeta"></div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="status-row" id="statusRow">
+        <span class="dot" id="connDot"></span>
+        <span id="connText" data-i18n="status.connecting">connecting...</span>
+      </div>
+      <div class="footer-actions">
+        <button class="icon-btn" id="openSettingsBtn" title="Settings (Ctrl+,)" data-i18n-title="nav.settings">
+          <svg viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2v.2a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 7 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.9H1a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 2.6 7a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 7 2.6h.1A1.7 1.7 0 0 0 8.3 1V1a2 2 0 1 1 4 0v.1A1.7 1.7 0 0 0 15 2.6a1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9v.1a1.7 1.7 0 0 0 1.7 1.1h.2a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1.1z" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".0"/></svg>
+        </button>
+        <button class="icon-btn" id="openPaletteBtn" title="Command palette (Ctrl+K)">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 9h6M7 13h10M7 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <a class="icon-btn" id="aboutBtn" title="About DAGENT" href="#" data-i18n-title="nav.about">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v6M12 7.6v.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================= MAIN ============================== -->
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn ghost only-collapsed" id="expandSidebar" title="Show sidebar (Ctrl+B)">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+      <div class="session-title-wrap">
+        <h1 class="session-title" id="sessionTitle" title="Click to rename" data-i18n-title="chat.rename_hint">New session</h1>
+        <div class="session-meta" id="sessionMeta"></div>
+      </div>
+
+      <div class="modes" id="modePills" role="tablist"></div>
+
+      <div class="topbar-right">
+        <div class="ctx-meter" id="ctxMeter" title="Context usage">
+          <div class="ctx-bar"><span id="ctxFill"></span></div>
+          <span class="ctx-text" id="ctxText">0%</span>
+        </div>
+
+        <button class="model-switch" id="modelSwitchBtn" title="Switch model (Ctrl+M)">
+          <span class="model-kind" id="modelKindIcon"></span>
+          <span class="model-info">
+            <span class="model-name" id="modelName" data-i18n="models.none">No model</span>
+            <span class="model-sub" id="modelSub" data-i18n="models.click_to_add">click to add</span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <button class="icon-btn ghost" id="toggleMonitorBtn" title="Agent monitor (Ctrl+J)">
+          <svg viewBox="0 0 24 24"><path d="M4 17l4-6 3.5 4L15 8l5 9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn ghost" id="topSettingsBtn" title="Settings (Ctrl+,)">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3v2.2M12 18.8V21M4.2 7.5l1.9 1.1M17.9 15.4l1.9 1.1M4.2 16.5l1.9-1.1M17.9 8.6l1.9-1.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="7.6" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".45"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="chat" id="chatArea">
+      <div class="chat-scroll" id="chatScroll">
+        <div class="chat-inner" id="chatInner">
+          <!-- empty state -->
+          <div class="empty-state" id="emptyState">
+            <div class="empty-logo">
+              <svg viewBox="0 0 64 64" width="72" height="72">
+                <defs>
+                  <linearGradient id="elg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="var(--accent)" />
+                    <stop offset="100%" stop-color="var(--accent-2)" />
+                  </linearGradient>
+                </defs>
+                <path d="M32 5 56 18.5v27L32 59 8 45.5v-27z" fill="none" stroke="url(#elg)" stroke-width="2.6" stroke-linejoin="round"/>
+                <circle cx="32" cy="32" r="8.5" fill="url(#elg)" opacity=".9"/>
+                <path d="M32 13v8M32 43v8M15 22l7 4M42 38l7 4M49 22l-7 4M22 38l-7 4" stroke="url(#elg)" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+              </svg>
+            </div>
+            <h2 class="empty-title" id="emptyTitle">What should DAGENT do?</h2>
+            <p class="empty-sub" id="emptySub">Pick a model, choose a mode and describe the task - the agent will read files, run commands and write code for you.</p>
+            <div class="quick-cards" id="quickCards"></div>
+            <div class="empty-checks" id="emptyChecks"></div>
+          </div>
+          <div class="messages" id="messages"></div>
+        </div>
+      </div>
+      <button class="scroll-down" id="scrollDownBtn" title="Scroll to bottom">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </section>
+
+    <footer class="composer-wrap">
+      <div class="attachments" id="attachments"></div>
+      <div class="composer" id="composer">
+        <div class="composer-left">
+          <button class="icon-btn" id="attachBtn" title="Attach files">
+            <svg viewBox="0 0 24 24"><path d="M20 11.5l-8 8a5 5 0 0 1-7-7l8.5-8.5a3.4 3.4 0 0 1 4.8 4.8L9.6 17.4a1.8 1.8 0 0 1-2.5-2.5l7.8-7.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="icon-btn" id="slashBtn" title="Slash commands">
+            <svg viewBox="0 0 24 24"><path d="M14 4l-4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 8h4M14 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity=".6"/></svg>
+          </button>
+        </div>
+        <textarea id="input" class="input" rows="1" placeholder="Ask DAGENT to do something..." data-i18n-placeholder="composer.placeholder" spellcheck="false"></textarea>
+        <div class="composer-right">
+          <div class="composer-stats" id="composerStats"></div>
+          <button class="send-btn" id="sendBtn" title="Send (Enter)">
+            <svg class="icon-send" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="icon-stop" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.4" fill="currentColor"/></svg>
+            <span class="send-label" data-i18n="composer.send">Send</span>
+          </button>
+        </div>
+      </div>
+      <div class="composer-hints">
+        <span id="hintLine"><kbd>Enter</kbd> <span data-i18n="composer.send_hint">send</span> &nbsp;·&nbsp; <kbd>Shift+Enter</kbd> <span data-i18n="composer.newline_hint">new line</span> &nbsp;·&nbsp; <kbd>Ctrl+K</kbd> <span data-i18n="composer.palette_hint">commands</span></span>
+        <span class="hint-right" id="composerModeLabel"></span>
+      </div>
+      <input type="file" id="fileInput" multiple hidden />
+    </footer>
+  </main>
+
+  <!-- ============================ MONITOR ============================ -->
+  <aside class="monitor" id="monitor">
+    <div class="monitor-head">
+      <div class="monitor-tabs" id="monitorTabs">
+        <button class="mtab active" data-tab="activity" data-i18n="monitor.activity">Activity</button>
+        <button class="mtab" data-tab="plan" data-i18n="monitor.plan">Plan</button>
+        <button class="mtab" data-tab="files" data-i18n="monitor.files">Files</button>
+        <button class="mtab" data-tab="terminal" data-i18n="monitor.terminal">Terminal</button>
+        <button class="mtab" data-tab="info" data-i18n="monitor.info">Info</button>
+      </div>
+      <button class="icon-btn tiny ghost" id="closeMonitor" title="Hide panel">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="monitor-body">
+      <div class="mpane active" data-pane="activity">
+        <div class="pane-head">
+          <span data-i18n="monitor.live">Live agent activity</span>
+          <button class="btn tiny ghost" id="clearActivity" data-i18n="common.clear">Clear</button>
+        </div>
+        <div class="activity" id="activityList"></div>
+      </div>
+      <div class="mpane" data-pane="plan">
+        <div class="pane-head">
+          <span data-i18n="monitor.plan">Plan</span>
+          <span class="plan-progress" id="planProgress">0/0</span>
+        </div>
+        <div class="plan" id="planList"></div>
+      </div>
+      <div class="mpane" data-pane="files">
+        <div class="pane-head">
+          <span data-i18n="monitor.changed">Changed in this run</span>
+          <button class="btn tiny ghost" id="refreshTree" data-i18n="common.refresh">Refresh</button>
+        </div>
+        <div class="changed-files" id="changedFiles"></div>
+        <div class="pane-head spaced"><span data-i18n="monitor.tree">Workspace tree</span></div>
+        <div class="filetree" id="fileTree"></div>
+      </div>
+      <div class="mpane" data-pane="terminal">
+        <div class="terminal" id="terminal">
+          <div class="term-output" id="termOutput"></div>
+          <div class="term-line">
+            <span class="term-prompt" id="termPrompt">$</span>
+            <input id="termInput" class="term-input" autocomplete="off" spellcheck="false" placeholder="type a command..." />
+          </div>
+        </div>
+      </div>
+      <div class="mpane" data-pane="info">
+        <div class="info-grid" id="infoGrid"></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- overlays -->
+<div class="toasts" id="toasts"></div>
+<div class="modal-root" id="modalRoot"></div>
+<div class="palette-root" id="paletteRoot"></div>
+<div class="onboarding-root" id="onboardingRoot"></div>
+<div class="dropdown-root" id="dropdownRoot"></div>
+
+<!--DAGENT_BOOT-->
+<script type="module" src="/js/boot.js"></script>
+</body>
+</html>

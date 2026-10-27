@@ -1,0 +1,51 @@
+{
+ "root": "/home/demo/DAGENTWorkspace",
+ "nodes": [
+  {
+   "name": "docs",
+   "path": "docs",
+   "abs": "/home/demo/DAGENTWorkspace/docs",
+   "type": "dir",
+   "depth": 1,
+   "size": 0,
+   "language": null
+  },
+  {
+   "name": "notes.md",
+   "path": "docs/notes.md",
+   "abs": "/home/demo/DAGENTWorkspace/docs/notes.md",
+   "type": "file",
+   "depth": 2,
+   "size": 26,
+   "language": "markdown"
+  },
+  {
+   "name": "src",
+   "path": "src",
+   "abs": "/home/demo/DAGENTWorkspace/src",
+   "type": "dir",
+   "depth": 1,
+   "size": 0,
+   "language": null
+  },
+  {
+   "name": "main.py",
+   "path": "src/main.py",
+   "abs": "/home/demo/DAGENTWorkspace/src/main.py",
+   "type": "file",
+   "depth": 2,
+   "size": 93,
+   "language": "python"
+  },
+  {
+   "name": "README.md",
+   "path": "README.md",
+   "abs": "/home/demo/DAGENTWorkspace/README.md",
+   "type": "file",
+   "depth": 1,
+   "size": 54,
+   "language": "markdown"
+  }
+ ],
+ "truncated": false
+}

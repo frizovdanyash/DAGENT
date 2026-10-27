@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="DAGENT">
+  <defs>
+    <linearGradient id="dagentFavicon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c5cff"/>
+      <stop offset="55%" stop-color="#4ea1ff"/>
+      <stop offset="100%" stop-color="#34d3ff"/>
+    </linearGradient>
+    <radialGradient id="dagentCore" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset="60%" stop-color="#9d86ff" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#5b3fd6" stop-opacity=".95"/>
+    </radialGradient>
+  </defs>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="#0b0e17"/>
+  <rect x="1.6" y="1.6" width="60.8" height="60.8" rx="14.6" fill="none" stroke="url(#dagentFavicon)" stroke-opacity=".35" stroke-width="1.2"/>
+  <path d="M32 9 52.5 20.5v23L32 55 11.5 43.5v-23z" fill="none" stroke="url(#dagentFavicon)" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M32 15.5v6.2M32 42.3v6.2M17.6 24l5.4 3.1M41 36.9l5.4 3.1M46.4 24l-5.4 3.1M23 36.9l-5.4 3.1"
+        stroke="url(#dagentFavicon)" stroke-width="2.1" stroke-linecap="round" opacity=".75"/>
+  <circle cx="32" cy="32" r="7.6" fill="url(#dagentCore)"/>
+  <circle cx="32" cy="32" r="11.4" fill="none" stroke="url(#dagentFavicon)" stroke-width="1.1" stroke-opacity=".45"/>
+</svg>

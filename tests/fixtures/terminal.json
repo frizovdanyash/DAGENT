@@ -1,0 +1,25 @@
+{
+ "ok": true,
+ "result": {
+  "ok": true,
+  "output": "exit code: 0\nfixture-terminal",
+  "data": {
+   "command": "echo fixture-terminal",
+   "cwd": "/home/demo/DAGENTWorkspace",
+   "shell": "bash",
+   "exit_code": 0,
+   "output": "fixture-terminal",
+   "duration_ms": 4,
+   "truncated": false,
+   "timed_out": false
+  },
+  "error": "",
+  "render": "command",
+  "meta": {
+   "duration_ms": 4,
+   "exit_code": 0
+  }
+ },
+ "risk": "low",
+ "reason": "Command is in the always-allow list"
+}

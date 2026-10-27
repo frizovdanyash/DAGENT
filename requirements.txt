@@ -1,0 +1,11 @@
+# DAGENT - required runtime dependencies
+fastapi>=0.110
+uvicorn[standard]>=0.27
+httpx>=0.27
+python-multipart>=0.0.9
+
+# Optional: local .gguf inference inside DAGENT (needs a C++ compiler + cmake).
+# Without it you can still use any local GGUF *server* (LM Studio, Ollama,
+# llama.cpp server, vLLM, KoboldCpp) through the OpenAI-compatible provider.
+#   pip install llama-cpp-python
+#   # CUDA build:  CMAKE_ARGS="-DGGML_CUDA=on" pip install llama-cpp-python --upgrade --force-reinstall

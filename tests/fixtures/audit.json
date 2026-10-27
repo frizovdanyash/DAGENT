@@ -1,0 +1,64 @@
+{
+ "entries": [
+  {
+   "id": 6,
+   "created_at": 1793109570.9048705,
+   "session_id": "a8827de284d14515",
+   "kind": "edit",
+   "tool": "edit_file",
+   "detail": "README.md [1 occurrence replaced]",
+   "approved": null,
+   "ok": 1
+  },
+  {
+   "id": 5,
+   "created_at": 1793109570.9039857,
+   "session_id": "a8827de284d14515",
+   "kind": "approval",
+   "tool": "edit_file",
+   "detail": "edit_file {\"path\": \"README.md\", \"old_text\": \"# Demo\", \"new_text\": \"# Demo (проверено DAGENT)\"}",
+   "approved": 1,
+   "ok": null
+  },
+  {
+   "id": 4,
+   "created_at": 1793109570.8228176,
+   "session_id": "a8827de284d14515",
+   "kind": "write",
+   "tool": "write_file",
+   "detail": "docs/report.md (write, 221 bytes)",
+   "approved": null,
+   "ok": 1
+  },
+  {
+   "id": 3,
+   "created_at": 1793109570.8223915,
+   "session_id": "a8827de284d14515",
+   "kind": "approval",
+   "tool": "write_file",
+   "detail": "write_file {\"path\": \"docs/report.md\", \"content\": \"# Отчёт DAGENT\\n\\n## Структура\\n\\n- `src/main.py` - точка входа\\n- `docs/notes.md` - заметки\\n\\n## Проверка\\n\\n```bash\\n$ python3 src/main.py\\nDAGENT demo project\\n```\\n\\nВсё работает.\\n\"}",
+   "approved": 1,
+   "ok": null
+  },
+  {
+   "id": 2,
+   "created_at": 1793109570.7871015,
+   "session_id": "a8827de284d14515",
+   "kind": "command",
+   "tool": "run_command",
+   "detail": "python3 src/main.py -> exit 0",
+   "approved": null,
+   "ok": 1
+  },
+  {
+   "id": 1,
+   "created_at": 1793109570.738316,
+   "session_id": "a8827de284d14515",
+   "kind": "approval",
+   "tool": "update_plan",
+   "detail": "update_plan {\"steps\": [{\"title\": \"Изучить структуру проекта\", \"status\": \"done\"}, {\"title\": \"Прочитать src/main.py\", \"status\": \"done\"}, {\"title\": \"Запустить скрипт и проверить вывод\", \"status\": \"in_progress\"}, {\"title\": \"Написать отчёт docs/report.md\", \"status\": \"pending\"}]}",
+   "approved": 1,
+   "ok": null
+  }
+ ]
+}

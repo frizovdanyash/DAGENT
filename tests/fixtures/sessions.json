@@ -1,0 +1,48 @@
+{
+ "sessions": [
+  {
+   "id": "a8827de284d14515",
+   "title": "Анализ проекта",
+   "created_at": 1793109570.5667226,
+   "updated_at": 1793109570.9543557,
+   "model_id": "fed8dbbdd502",
+   "mode": "assistant",
+   "workspace": "/home/demo/DAGENTWorkspace",
+   "pinned": 0,
+   "archived": 0,
+   "tags": [],
+   "stats": {
+    "messages": 8,
+    "chars": 333,
+    "tokens": 1120,
+    "last_run_tokens": 1120
+   },
+   "meta": {
+    "plan": [
+     {
+      "title": "Изучить структуру проекта",
+      "status": "done",
+      "detail": ""
+     },
+     {
+      "title": "Прочитать src/main.py",
+      "status": "done",
+      "detail": ""
+     },
+     {
+      "title": "Запустить скрипт и проверить вывод",
+      "status": "in_progress",
+      "detail": ""
+     },
+     {
+      "title": "Написать отчёт docs/report.md",
+      "status": "pending",
+      "detail": ""
+     }
+    ]
+   },
+   "msg_count": 8
+  }
+ ],
+ "count": 1
+}
