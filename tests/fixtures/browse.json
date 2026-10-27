@@ -1,0 +1,28 @@
+{
+ "path": "/home/demo/DAGENTWorkspace",
+ "parent": "/tmp",
+ "entries": [
+  {
+   "name": "docs",
+   "path": "/home/demo/DAGENTWorkspace/docs",
+   "type": "dir",
+   "size": 0,
+   "gguf": false
+  },
+  {
+   "name": "src",
+   "path": "/home/demo/DAGENTWorkspace/src",
+   "type": "dir",
+   "size": 0,
+   "gguf": false
+  },
+  {
+   "name": "README.md",
+   "path": "/home/demo/DAGENTWorkspace/README.md",
+   "type": "file",
+   "size": 82,
+   "gguf": false
+  }
+ ],
+ "home": "/home/user"
+}

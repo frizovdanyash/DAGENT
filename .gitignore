@@ -1,0 +1,43 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Node (only used by the optional front-end test harness) ---
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# --- DAGENT runtime data (never commit local config, sessions or keys) ---
+.dagent/
+*.db
+*.db-journal
+*.sqlite
+audit.log
+settings.local.json
+
+# --- local GGUF models ---
+*.gguf
+*.gguf.tmp
+
+# --- editors / OS ---
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- test scratch ---
+tests/_ws_test_server.py
+/tmp/

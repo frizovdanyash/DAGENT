@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-label="DAGENT - local AI agent">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0d18"/>
+      <stop offset="0.55" stop-color="#10142a"/>
+      <stop offset="1" stop-color="#0b1020"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b6bff"/>
+      <stop offset="0.5" stop-color="#5ad0ff"/>
+      <stop offset="1" stop-color="#37e6b0"/>
+    </linearGradient>
+    <linearGradient id="cardHead" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#34d3ff" stop-opacity="0.05"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#21d4fd" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#21d4fd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowC" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#37e6b0" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#37e6b0" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <clipPath id="round">
+      <rect x="0" y="0" width="1200" height="380" rx="26"/>
+    </clipPath>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="1200" height="380" fill="url(#bg)"/>
+    <g filter="url(#soft)">
+      <ellipse cx="180" cy="60" rx="290" ry="200" fill="url(#glowA)"/>
+      <ellipse cx="620" cy="380" rx="330" ry="180" fill="url(#glowB)"/>
+      <ellipse cx="1080" cy="120" rx="260" ry="200" fill="url(#glowC)"/>
+    </g>
+    <rect width="1200" height="380" fill="url(#grid)"/>
+
+    <!-- ===================== left: wordmark ===================== -->
+    <g>
+      <svg x="60" y="62" width="56" height="56" viewBox="0 0 64 64"><defs>
+    <linearGradient id="dagentFavicon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c5cff"/>
+      <stop offset="55%" stop-color="#4ea1ff"/>
+      <stop offset="100%" stop-color="#34d3ff"/>
+    </linearGradient>
+    <radialGradient id="dagentCore" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset="60%" stop-color="#9d86ff" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#5b3fd6" stop-opacity=".95"/>
+    </radialGradient>
+  </defs>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="#0b0e17"/>
+  <rect x="1.6" y="1.6" width="60.8" height="60.8" rx="14.6" fill="none" stroke="url(#dagentFavicon)" stroke-opacity=".35" stroke-width="1.2"/>
+  <path d="M32 9 52.5 20.5v23L32 55 11.5 43.5v-23z" fill="none" stroke="url(#dagentFavicon)" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M32 15.5v6.2M32 42.3v6.2M17.6 24l5.4 3.1M41 36.9l5.4 3.1M46.4 24l-5.4 3.1M23 36.9l-5.4 3.1"
+        stroke="url(#dagentFavicon)" stroke-width="2.1" stroke-linecap="round" opacity=".75"/>
+  <circle cx="32" cy="32" r="7.6" fill="url(#dagentCore)"/>
+  <circle cx="32" cy="32" r="11.4" fill="none" stroke="url(#dagentFavicon)" stroke-width="1.1" stroke-opacity=".45"/></svg>
+
+      <text x="62" y="196" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="86" font-weight="800" letter-spacing="4" fill="url(#brand)">DAGENT</text>
+      <text x="66" y="238" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="22" fill="#c9d2f0" opacity="0.92">Локальный AI-агент: команды, файлы, любые модели</text>
+      <text x="66" y="268" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="17" fill="#8d97bb">Сессии · режимы · 100+ настроек · всё на вашей машине</text>
+
+      <!-- chips -->
+      <g font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#dfe6ff">
+        <g>
+          <rect x="66" y="298" width="144" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+          <circle cx="86" cy="313" r="4" fill="#8b6bff"/>
+          <text x="98" y="318">17 инструментов</text>
+        </g>
+        <g>
+          <rect x="222" y="298" width="106" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+          <circle cx="242" cy="313" r="4" fill="#34d3ff"/>
+          <text x="254" y="318">6 режимов</text>
+        </g>
+        <g>
+          <rect x="340" y="298" width="112" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+          <circle cx="360" cy="313" r="4" fill="#37e6b0"/>
+          <text x="372" y="318">GGUF + API</text>
+        </g>
+        <g>
+          <rect x="464" y="298" width="140" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+          <circle cx="484" cy="313" r="4" fill="#ffb454"/>
+          <text x="496" y="318">100% локально</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ===================== right: mock UI ===================== -->
+    <g transform="translate(690 58)">
+      <rect x="0" y="0" width="452" height="272" rx="18" fill="#0d1122" fill-opacity="0.92" stroke="#ffffff" stroke-opacity="0.12"/>
+      <rect x="0" y="0" width="452" height="42" rx="18" fill="url(#cardHead)"/>
+      <rect x="0" y="30" width="452" height="12" fill="url(#cardHead)"/>
+      <circle cx="24" cy="21" r="5.5" fill="#ff5f57"/>
+      <circle cx="44" cy="21" r="5.5" fill="#febc2e"/>
+      <circle cx="64" cy="21" r="5.5" fill="#28c840"/>
+      <text x="226" y="26" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13.5" fill="#aab4d8" text-anchor="middle">Ассистент · DeepSeek V3</text>
+      <rect x="352" y="10" width="82" height="22" rx="11" fill="#37e6b0" fill-opacity="0.16" stroke="#37e6b0" stroke-opacity="0.4"/>
+      <circle cx="366" cy="21" r="3.6" fill="#37e6b0"/>
+      <text x="376" y="26" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#8ef0cd">онлайн</text>
+
+      <!-- user bubble -->
+      <g transform="translate(20 56)">
+        <rect x="120" y="0" width="292" height="34" rx="12" fill="#7c5cff" fill-opacity="0.22" stroke="#7c5cff" stroke-opacity="0.35"/>
+        <text x="136" y="22" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#e7e2ff">Разбери проект и добавь тесты</text>
+      </g>
+
+      <!-- tool card: command -->
+      <g transform="translate(20 102)">
+        <rect x="0" y="0" width="300" height="60" rx="12" fill="#0a0e1c" stroke="#ffffff" stroke-opacity="0.12"/>
+        <rect x="0" y="0" width="4" height="60" rx="2" fill="#34d3ff"/>
+        <text x="18" y="21" font-family="Consolas, Menlo, monospace" font-size="12" fill="#7fdcff">$ pytest -q tests/</text>
+        <text x="18" y="42" font-family="Consolas, Menlo, monospace" font-size="12" fill="#8d97bb">12 passed in 1.84s</text>
+        <rect x="228" y="14" width="58" height="20" rx="10" fill="#37e6b0" fill-opacity="0.16" stroke="#37e6b0" stroke-opacity="0.35"/>
+        <text x="257" y="28" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="11" fill="#8ef0cd" text-anchor="middle">low risk</text>
+      </g>
+
+      <!-- tool card: diff -->
+      <g transform="translate(20 172)">
+        <rect x="0" y="0" width="300" height="60" rx="12" fill="#0a0e1c" stroke="#ffffff" stroke-opacity="0.12"/>
+        <rect x="0" y="0" width="4" height="60" rx="2" fill="#8b6bff"/>
+        <text x="18" y="20" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#c9d2f0">tests/test_api.py</text>
+        <text x="18" y="38" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#ff8fa3">- assert res == 1</text>
+        <text x="18" y="53" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#7ce8b4">+ assert res.status_code == 200</text>
+      </g>
+
+      <!-- approval card -->
+      <g transform="translate(332 102)">
+        <rect x="0" y="0" width="100" height="130" rx="12" fill="#ffb454" fill-opacity="0.1" stroke="#ffb454" stroke-opacity="0.4"/>
+        <text x="14" y="24" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#ffd79a">Подтвердить</text>
+        <text x="14" y="44" font-family="Consolas, Menlo, monospace" font-size="10.5" fill="#c9d2f0">rm -r build/</text>
+        <rect x="14" y="58" width="72" height="24" rx="12" fill="#37e6b0" fill-opacity="0.9"/>
+        <text x="50" y="74" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#06231a" text-anchor="middle">Разрешить</text>
+        <rect x="14" y="90" width="72" height="24" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.18"/>
+        <text x="50" y="106" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#e6ebff" text-anchor="middle">Отклонить</text>
+      </g>
+
+      <!-- plan checklist -->
+      <g transform="translate(332 244)" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="11" fill="#8d97bb">
+        <rect x="0" y="0" width="100" height="14" rx="7" fill="#ffffff" fill-opacity="0.06"/>
+        <rect x="0" y="0" width="62" height="14" rx="7" fill="#7c5cff" fill-opacity="0.65"/>
+      </g>
+    </g>
+
+    <!-- bottom line -->
+    <text x="66" y="356" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#6f799c">автор frizovdanya · telegram @frizovdanya · MIT</text>
+    <text x="1134" y="356" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#6f799c" text-anchor="end">python run.py</text>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+{
+ "path": "/home/demo/DAGENTWorkspace/src/main.py",
+ "binary": false,
+ "size": 93,
+ "content": "def main() -> None:\n    print('DAGENT demo project')\n\n\nif __name__ == '__main__':\n    main()\n",
+ "language": "python"
+}

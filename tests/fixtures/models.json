@@ -1,0 +1,327 @@
+{
+ "profiles": [
+  {
+   "id": "bda0cb1a6be0",
+   "name": "LM Studio (local)",
+   "kind": "api",
+   "provider_preset": "lmstudio",
+   "provider_label": "LM Studio",
+   "base_url": "http://localhost:1234/v1",
+   "api_key": "",
+   "model": "local-model",
+   "gguf_path": "",
+   "gguf_options": {},
+   "params": {},
+   "capabilities": {
+    "native_tools": true,
+    "context_window": 8192,
+    "vision": false,
+    "emulate_tool_role": true
+   },
+   "extra_headers": {},
+   "extra_body": {},
+   "enabled": true,
+   "favorite": false,
+   "color": "",
+   "notes": "Example profile. Start LM Studio's local server (port 1234) and load any model, or edit this one.",
+   "created_at": 1793109570.499921,
+   "updated_at": 1793109570.499921,
+   "last_used": null,
+   "usage_count": 0,
+   "has_api_key": false,
+   "api_key_masked": ""
+  },
+  {
+   "id": "fed8dbbdd502",
+   "name": "Demo GPT-4o mini",
+   "kind": "api",
+   "provider_preset": "openai",
+   "provider_label": "OpenAI",
+   "base_url": "http://127.0.0.1:8601/v1",
+   "api_key": "",
+   "model": "mock-gpt",
+   "gguf_path": "",
+   "gguf_options": {},
+   "params": {
+    "temperature": 0.4,
+    "max_tokens": 1200
+   },
+   "capabilities": {
+    "native_tools": true,
+    "context_window": 8192,
+    "vision": false,
+    "emulate_tool_role": true
+   },
+   "extra_headers": {},
+   "extra_body": {},
+   "enabled": true,
+   "favorite": false,
+   "color": "",
+   "notes": "Fixture profile used by the front-end test harness.",
+   "created_at": 1793109570.532112,
+   "updated_at": 1793109570.532112,
+   "last_used": null,
+   "usage_count": 0,
+   "has_api_key": true,
+   "api_key_masked": "sk-d******cdef"
+  },
+  {
+   "id": "43775f146af7",
+   "name": "LM Studio (local)",
+   "kind": "api",
+   "provider_preset": "lmstudio",
+   "provider_label": "LM Studio",
+   "base_url": "http://localhost:1234/v1",
+   "api_key": "",
+   "model": "qwen2.5-coder-7b-instruct",
+   "gguf_path": "",
+   "gguf_options": {},
+   "params": {},
+   "capabilities": {
+    "native_tools": true,
+    "context_window": 32768,
+    "emulate_tool_role": true
+   },
+   "extra_headers": {},
+   "extra_body": {},
+   "enabled": true,
+   "favorite": false,
+   "color": "",
+   "notes": "",
+   "created_at": 1793109570.5377674,
+   "updated_at": 1793109570.5377674,
+   "last_used": null,
+   "usage_count": 0,
+   "has_api_key": false,
+   "api_key_masked": ""
+  }
+ ],
+ "active_id": "fed8dbbdd502",
+ "presets": [
+  {
+   "id": "openai",
+   "base_url": "https://api.openai.com/v1",
+   "label": "OpenAI",
+   "native_tools": true
+  },
+  {
+   "id": "openrouter",
+   "base_url": "https://openrouter.ai/api/v1",
+   "label": "OpenRouter",
+   "native_tools": true
+  },
+  {
+   "id": "deepseek",
+   "base_url": "https://api.deepseek.com/v1",
+   "label": "DeepSeek",
+   "native_tools": true
+  },
+  {
+   "id": "groq",
+   "base_url": "https://api.groq.com/openai/v1",
+   "label": "Groq",
+   "native_tools": true
+  },
+  {
+   "id": "mistral",
+   "base_url": "https://api.mistral.ai/v1",
+   "label": "Mistral AI",
+   "native_tools": true
+  },
+  {
+   "id": "together",
+   "base_url": "https://api.together.xyz/v1",
+   "label": "Together AI",
+   "native_tools": true
+  },
+  {
+   "id": "fireworks",
+   "base_url": "https://api.fireworks.ai/inference/v1",
+   "label": "Fireworks",
+   "native_tools": true
+  },
+  {
+   "id": "anthropic_proxy",
+   "base_url": "https://api.anthropic.com/v1",
+   "label": "Anthropic (proxy)",
+   "native_tools": true
+  },
+  {
+   "id": "xai",
+   "base_url": "https://api.x.ai/v1",
+   "label": "xAI (Grok)",
+   "native_tools": true
+  },
+  {
+   "id": "moonshot",
+   "base_url": "https://api.moonshot.ai/v1",
+   "label": "Moonshot",
+   "native_tools": true
+  },
+  {
+   "id": "qwen",
+   "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+   "label": "Qwen / DashScope",
+   "native_tools": true
+  },
+  {
+   "id": "siliconflow",
+   "base_url": "https://api.siliconflow.cn/v1",
+   "label": "SiliconFlow",
+   "native_tools": true
+  },
+  {
+   "id": "lmstudio",
+   "base_url": "http://localhost:1234/v1",
+   "label": "LM Studio",
+   "native_tools": true
+  },
+  {
+   "id": "ollama",
+   "base_url": "http://localhost:11434/v1",
+   "label": "Ollama",
+   "native_tools": false
+  },
+  {
+   "id": "llamacpp",
+   "base_url": "http://localhost:8080/v1",
+   "label": "llama.cpp server",
+   "native_tools": false
+  },
+  {
+   "id": "vllm",
+   "base_url": "http://localhost:8000/v1",
+   "label": "vLLM",
+   "native_tools": true
+  },
+  {
+   "id": "koboldcpp",
+   "base_url": "http://localhost:5001/v1",
+   "label": "KoboldCpp",
+   "native_tools": false
+  },
+  {
+   "id": "custom",
+   "base_url": "",
+   "label": "Custom / self-hosted",
+   "native_tools": null
+  }
+ ],
+ "status": {
+  "llama_cpp_installed": false,
+  "llama_cpp_version": "",
+  "llama_cpp_hint": "llama-cpp-python is not installed. Run one of:\n  CPU:      pip install llama-cpp-python\n  CUDA:     CMAKE_ARGS='-DGGML_CUDA=on' pip install llama-cpp-python --upgrade --force-reinstall\n  macOS ML: CMAKE_ARGS='-DGGML_METAL=on' pip install llama-cpp-python --upgrade --force-reinstall\nNo compiler? Use a local server instead: LM Studio, Ollama or llama.cpp server and add the model as an 'API' profile (http://localhost:1234/v1).",
+  "loaded_gguf": [],
+  "presets": [
+   {
+    "id": "openai",
+    "base_url": "https://api.openai.com/v1",
+    "label": "OpenAI",
+    "native_tools": true
+   },
+   {
+    "id": "openrouter",
+    "base_url": "https://openrouter.ai/api/v1",
+    "label": "OpenRouter",
+    "native_tools": true
+   },
+   {
+    "id": "deepseek",
+    "base_url": "https://api.deepseek.com/v1",
+    "label": "DeepSeek",
+    "native_tools": true
+   },
+   {
+    "id": "groq",
+    "base_url": "https://api.groq.com/openai/v1",
+    "label": "Groq",
+    "native_tools": true
+   },
+   {
+    "id": "mistral",
+    "base_url": "https://api.mistral.ai/v1",
+    "label": "Mistral AI",
+    "native_tools": true
+   },
+   {
+    "id": "together",
+    "base_url": "https://api.together.xyz/v1",
+    "label": "Together AI",
+    "native_tools": true
+   },
+   {
+    "id": "fireworks",
+    "base_url": "https://api.fireworks.ai/inference/v1",
+    "label": "Fireworks",
+    "native_tools": true
+   },
+   {
+    "id": "anthropic_proxy",
+    "base_url": "https://api.anthropic.com/v1",
+    "label": "Anthropic (proxy)",
+    "native_tools": true
+   },
+   {
+    "id": "xai",
+    "base_url": "https://api.x.ai/v1",
+    "label": "xAI (Grok)",
+    "native_tools": true
+   },
+   {
+    "id": "moonshot",
+    "base_url": "https://api.moonshot.ai/v1",
+    "label": "Moonshot",
+    "native_tools": true
+   },
+   {
+    "id": "qwen",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "label": "Qwen / DashScope",
+    "native_tools": true
+   },
+   {
+    "id": "siliconflow",
+    "base_url": "https://api.siliconflow.cn/v1",
+    "label": "SiliconFlow",
+    "native_tools": true
+   },
+   {
+    "id": "lmstudio",
+    "base_url": "http://localhost:1234/v1",
+    "label": "LM Studio",
+    "native_tools": true
+   },
+   {
+    "id": "ollama",
+    "base_url": "http://localhost:11434/v1",
+    "label": "Ollama",
+    "native_tools": false
+   },
+   {
+    "id": "llamacpp",
+    "base_url": "http://localhost:8080/v1",
+    "label": "llama.cpp server",
+    "native_tools": false
+   },
+   {
+    "id": "vllm",
+    "base_url": "http://localhost:8000/v1",
+    "label": "vLLM",
+    "native_tools": true
+   },
+   {
+    "id": "koboldcpp",
+    "base_url": "http://localhost:5001/v1",
+    "label": "KoboldCpp",
+    "native_tools": false
+   },
+   {
+    "id": "custom",
+    "base_url": "",
+    "label": "Custom / self-hosted",
+    "native_tools": null
+   }
+  ]
+ },
+ "count": 3
+}

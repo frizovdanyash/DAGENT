@@ -1,0 +1,14 @@
+{
+  "name": "dagent-web-tests",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Optional front-end test harness for DAGENT. The application itself is pure Python + vanilla ES modules and needs no Node.js build step.",
+  "scripts": {
+    "test:frontend": "node tests/test_frontend.mjs",
+    "fixtures": "python3 tests/capture_fixtures.py"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  }
+}

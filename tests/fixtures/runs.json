@@ -1,0 +1,23 @@
+{
+ "runs": [
+  {
+   "run_id": "1086f62ff4f3",
+   "session_id": "a8827de284d14515",
+   "model_id": "fed8dbbdd502",
+   "mode": "assistant",
+   "status": "done",
+   "started_at": 1793109570.5694282,
+   "finished_at": 1793109570.9534855,
+   "iterations": 7,
+   "max_iterations": 12,
+   "prompt_tokens": 840,
+   "completion_tokens": 280,
+   "total_tokens": 1120,
+   "tools_used": 6,
+   "last_error": "",
+   "stop_reason": "final answer",
+   "elapsed_ms": 384
+  }
+ ],
+ "active": []
+}

@@ -1,0 +1,287 @@
+/* ============================================================
+   DAGENT design tokens & themes
+   Every visual knob the GUI exposes is a CSS variable, so
+   themes / accents / density are pure runtime changes.
+   ============================================================ */
+
+:root {
+  /* accents (overridden by the accent picker) */
+  --accent: #7c5cff;
+  --accent-2: #34d3ff;
+  --accent-soft: rgba(124, 92, 255, 0.16);
+  --accent-border: rgba(124, 92, 255, 0.42);
+  --on-accent: #ffffff;
+
+  /* semantic */
+  --ok: #35d07f;
+  --warn: #f5b942;
+  --danger: #ff5c6c;
+  --info: #4ea1ff;
+
+  /* radii & motion */
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --speed: 190ms;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* typography */
+  --font: "Inter", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+  --font-cyr: "Inter", "SF Pro Text", -apple-system, "Segoe UI", Roboto, "Noto Sans", "PT Sans", Arial, sans-serif;
+  --mono: "JetBrains Mono", "SF Mono", "Cascadia Code", "Fira Code", ui-monospace, Menlo, Consolas, monospace;
+  --fs: 14.5px;
+  --fs-xs: 11.5px;
+  --fs-sm: 12.8px;
+  --fs-lg: 16.5px;
+  --fs-xl: 21px;
+  --line: 1.62;
+
+  /* spacing driven by density */
+  --gap: 14px;
+  --pad: 16px;
+  --msg-gap: 18px;
+
+  /* layout */
+  --sidebar-w: 292px;
+  --monitor-w: 380px;
+  --topbar-h: 62px;
+  --content-w: 860px;
+
+  --blur: 18px;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-2: 0 10px 30px -12px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.22);
+  --shadow-3: 0 40px 90px -30px rgba(0, 0, 0, 0.75), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* --------------------------- themes --------------------------- */
+
+html[data-theme="midnight"] {
+  --bg: #0b0e17;
+  --bg-2: #070a12;
+  --panel: rgba(22, 27, 42, 0.72);
+  --panel-solid: #151a28;
+  --panel-2: rgba(30, 36, 54, 0.78);
+  --elev: rgba(38, 45, 66, 0.85);
+  --text: #e8ecf6;
+  --text-dim: #a9b2c8;
+  --text-mute: #767f97;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-soft: rgba(255, 255, 255, 0.055);
+  --code-bg: rgba(8, 11, 20, 0.82);
+  --sel: rgba(124, 92, 255, 0.35);
+  --fx-a: #6d5bff;
+  --fx-b: #17c3ff;
+  --fx-c: #ff5ca8;
+  --scheme: dark;
+}
+
+html[data-theme="obsidian"] {
+  --bg: #0a0a0b;
+  --bg-2: #060607;
+  --panel: rgba(20, 20, 22, 0.7);
+  --panel-solid: #141416;
+  --panel-2: rgba(28, 28, 31, 0.8);
+  --elev: rgba(38, 38, 42, 0.9);
+  --text: #ececf0;
+  --text-dim: #a5a5ad;
+  --text-mute: #6f6f78;
+  --border: rgba(255, 255, 255, 0.085);
+  --border-soft: rgba(255, 255, 255, 0.05);
+  --code-bg: rgba(6, 6, 8, 0.85);
+  --sel: rgba(255, 255, 255, 0.18);
+  --fx-a: #7c5cff;
+  --fx-b: #00e0c6;
+  --fx-c: #ff7a45;
+  --scheme: dark;
+}
+
+html[data-theme="nebula"] {
+  --bg: #100a1c;
+  --bg-2: #0a0614;
+  --panel: rgba(31, 21, 51, 0.7);
+  --panel-solid: #1d1533;
+  --panel-2: rgba(43, 30, 68, 0.78);
+  --elev: rgba(56, 40, 88, 0.85);
+  --text: #f0e9ff;
+  --text-dim: #b8a9d8;
+  --text-mute: #8574a8;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-soft: rgba(255, 255, 255, 0.06);
+  --code-bg: rgba(10, 6, 20, 0.82);
+  --sel: rgba(190, 120, 255, 0.32);
+  --fx-a: #b14bff;
+  --fx-b: #ff5ca8;
+  --fx-c: #4bd8ff;
+  --scheme: dark;
+}
+
+html[data-theme="forest"] {
+  --bg: #08120f;
+  --bg-2: #050d0b;
+  --panel: rgba(16, 34, 29, 0.72);
+  --panel-solid: #10221d;
+  --panel-2: rgba(23, 46, 39, 0.8);
+  --elev: rgba(31, 60, 51, 0.86);
+  --text: #e6f4ee;
+  --text-dim: #a3c3b6;
+  --text-mute: #6f9184;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-soft: rgba(255, 255, 255, 0.05);
+  --code-bg: rgba(4, 12, 10, 0.85);
+  --sel: rgba(53, 208, 127, 0.28);
+  --fx-a: #21c07a;
+  --fx-b: #7ce0ff;
+  --fx-c: #d7f75b;
+  --scheme: dark;
+}
+
+html[data-theme="nord"] {
+  --bg: #22272e;
+  --bg-2: #1b1f25;
+  --panel: rgba(41, 47, 56, 0.76);
+  --panel-solid: #2a3038;
+  --panel-2: rgba(52, 60, 71, 0.8);
+  --elev: rgba(64, 74, 88, 0.88);
+  --text: #e6ebf2;
+  --text-dim: #aab6c6;
+  --text-mute: #7d8998;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-soft: rgba(255, 255, 255, 0.05);
+  --code-bg: rgba(24, 28, 34, 0.86);
+  --sel: rgba(136, 192, 208, 0.3);
+  --fx-a: #88c0d0;
+  --fx-b: #a3be8c;
+  --fx-c: #b48ead;
+  --scheme: dark;
+}
+
+html[data-theme="daylight"] {
+  --bg: #f4f6fb;
+  --bg-2: #e9edf6;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-solid: #ffffff;
+  --panel-2: rgba(255, 255, 255, 0.92);
+  --elev: #ffffff;
+  --text: #161b28;
+  --text-dim: #4d566b;
+  --text-mute: #7d879c;
+  --border: rgba(16, 22, 40, 0.11);
+  --border-soft: rgba(16, 22, 40, 0.07);
+  --code-bg: #f2f4fa;
+  --sel: rgba(124, 92, 255, 0.22);
+  --shadow-1: 0 1px 2px rgba(20, 26, 45, 0.08);
+  --shadow-2: 0 12px 28px -14px rgba(20, 26, 45, 0.28), 0 2px 6px rgba(20, 26, 45, 0.06);
+  --shadow-3: 0 40px 80px -32px rgba(20, 26, 45, 0.35), 0 6px 18px rgba(20, 26, 45, 0.1);
+  --fx-a: #9d8bff;
+  --fx-b: #6fd3ff;
+  --fx-c: #ffb3d1;
+  --scheme: light;
+}
+
+html[data-theme="paper"] {
+  --bg: #faf6ef;
+  --bg-2: #f2ece1;
+  --panel: rgba(255, 253, 249, 0.86);
+  --panel-solid: #fffdf9;
+  --panel-2: rgba(255, 252, 246, 0.94);
+  --elev: #fffdf9;
+  --text: #2a2620;
+  --text-dim: #5f584c;
+  --text-mute: #8d8578;
+  --border: rgba(60, 48, 30, 0.13);
+  --border-soft: rgba(60, 48, 30, 0.08);
+  --code-bg: #f5f0e6;
+  --sel: rgba(196, 132, 52, 0.24);
+  --shadow-1: 0 1px 2px rgba(60, 45, 25, 0.07);
+  --shadow-2: 0 12px 26px -14px rgba(60, 45, 25, 0.22), 0 2px 6px rgba(60, 45, 25, 0.06);
+  --shadow-3: 0 36px 70px -30px rgba(60, 45, 25, 0.3), 0 6px 16px rgba(60, 45, 25, 0.09);
+  --fx-a: #e0a86a;
+  --fx-b: #a8c4a2;
+  --fx-c: #d99a9a;
+  --scheme: light;
+}
+
+/* --------------------------- density --------------------------- */
+
+html[data-density="compact"] {
+  --gap: 10px;
+  --pad: 11px;
+  --msg-gap: 12px;
+  --topbar-h: 52px;
+  --fs: 13.4px;
+  --fs-sm: 12.2px;
+  --line: 1.5;
+}
+
+html[data-density="cozy"] {
+  --gap: 18px;
+  --pad: 22px;
+  --msg-gap: 24px;
+  --topbar-h: 68px;
+}
+
+/* --------------------------- motion off --------------------------- */
+
+html[data-anim="off"] *,
+html[data-anim="off"] *::before,
+html[data-anim="off"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+html[data-blur="off"] {
+  --blur: 0px;
+}
+
+/* --------------------------- accents --------------------------- */
+
+html[data-accent="violet"]  { --accent: #7c5cff; --accent-2: #34d3ff; }
+html[data-accent="blue"]    { --accent: #4ea1ff; --accent-2: #7ce0ff; }
+html[data-accent="cyan"]    { --accent: #00c2a8; --accent-2: #6fe3ff; }
+html[data-accent="green"]   { --accent: #35d07f; --accent-2: #b6f36b; }
+html[data-accent="amber"]   { --accent: #f5b942; --accent-2: #ffe066; }
+html[data-accent="orange"]  { --accent: #ff7a45; --accent-2: #ffc14d; }
+html[data-accent="pink"]    { --accent: #ff5c9e; --accent-2: #b47bff; }
+html[data-accent="red"]     { --accent: #ff4d5e; --accent-2: #ff9f6e; }
+
+html {
+  --accent-soft: color-mix(in srgb, var(--accent) 16%, transparent);
+  --accent-border: color-mix(in srgb, var(--accent) 42%, transparent);
+}
+
+/* Fallback for browsers without color-mix */
+@supports not (color: color-mix(in srgb, red 10%, blue)) {
+  html { --accent-soft: rgba(124, 92, 255, 0.16); --accent-border: rgba(124, 92, 255, 0.42); }
+}
+
+/* --------------------------- syntax colours --------------------------- */
+
+:root {
+  --syn-key: #ff7ab2;
+  --syn-str: #9be89b;
+  --syn-num: #ffcb6b;
+  --syn-com: #6a7387;
+  --syn-fn: #82cfff;
+  --syn-var: #e8ecf6;
+  --syn-tag: #ff8f7a;
+  --syn-attr: #ffcb6b;
+  --syn-op: #c792ea;
+}
+
+html[data-theme="daylight"], html[data-theme="paper"] {
+  --syn-key: #a626a4;
+  --syn-str: #2f7d32;
+  --syn-num: #b4530a;
+  --syn-com: #8b93a3;
+  --syn-fn: #1f6feb;
+  --syn-var: #24292f;
+  --syn-tag: #c0392b;
+  --syn-attr: #a05a00;
+  --syn-op: #7c3aed;
+  --text: #161b28;
+}

@@ -1,0 +1,1510 @@
+{
+ "version": "1.0.0",
+ "author": "frizovdanya",
+ "author_tg": "https://t.me/frizovdanya",
+ "settings": {
+  "version": 6,
+  "app": {
+   "language": "ru",
+   "first_run_done": false,
+   "host": "127.0.0.1",
+   "port": 8420,
+   "open_on_start": true,
+   "window_mode": false,
+   "window_size": [
+    1440,
+    900
+   ],
+   "show_console": false,
+   "auto_update_check": false,
+   "dev_mode": true,
+   "token_secret": ""
+  },
+  "ui": {
+   "theme": "midnight",
+   "accent": "#7c5cff",
+   "custom_css": "",
+   "font_family": "system",
+   "font_size": 14.5,
+   "mono_font": "mono",
+   "density": "comfortable",
+   "animations": true,
+   "background_fx": "aurora",
+   "blur": true,
+   "corner_radius": 14,
+   "content_width": 860,
+   "sidebar_collapsed": false,
+   "show_monitor": true,
+   "monitor_tab": "activity",
+   "show_timestamps": true,
+   "show_avatars": true,
+   "show_token_stats": true,
+   "code_wrap": false,
+   "code_line_numbers": true,
+   "markdown": true,
+   "stream_smooth": true,
+   "sound": false,
+   "confirm_on_close": true,
+   "compact_tool_cards": false,
+   "message_spacing": 18
+  },
+  "workspace": {
+   "root": "/home/demo/DAGENTWorkspace",
+   "recent": [],
+   "sandbox": true,
+   "allow_read_outside": false,
+   "hidden_entries": [
+    ".git",
+    "node_modules",
+    "__pycache__",
+    ".venv",
+    "venv",
+    ".idea",
+    ".vscode",
+    "dist",
+    "build",
+    ".mypy_cache",
+    ".pytest_cache"
+   ],
+   "max_tree_files": 4000
+  },
+  "agent": {
+   "mode": "assistant",
+   "max_iterations": 15,
+   "temperature": 0.7,
+   "top_p": 0.95,
+   "top_k": 0,
+   "max_tokens": 2048,
+   "context_window": 8192,
+   "frequency_penalty": 0.0,
+   "presence_penalty": 0.0,
+   "repeat_penalty": 1.1,
+   "stop_sequences": [],
+   "stream": true,
+   "extra_system_prompt": "",
+   "memory_enabled": true,
+   "memory_file": "DAGENT_MEMORY.md",
+   "auto_title": true,
+   "compress_history": true,
+   "compress_ratio": 0.7,
+   "retry_on_error": 2,
+   "request_timeout": 300,
+   "show_reasoning": true,
+   "tool_protocol": "auto",
+   "include_environment": true,
+   "include_file_tree": false,
+   "seed": null
+  },
+  "security": {
+   "auto_approve": false,
+   "auto_approve_reads": true,
+   "confirm_timeout": 300,
+   "shell": "auto",
+   "custom_shell": "",
+   "command_timeout": 120,
+   "max_output_chars": 120000,
+   "allow_network_tools": true,
+   "allow_delete": true,
+   "confirm_delete": true,
+   "allow_python_exec": true,
+   "allow_write_outside_workspace": false,
+   "audit_log": true,
+   "denied_commands": [
+    "rm\\s+-rf\\s+/(?!home|tmp)\\S*",
+    ":\\(\\)\\s*\\{\\s*:\\|:&\\s*\\}\\s*;:",
+    "mkfs(\\.\\w+)?\\s",
+    "dd\\s+if=.*of=/dev/",
+    "shutdown|reboot|halt|poweroff",
+    "chmod\\s+-R\\s+777\\s+/",
+    ">\\s*/dev/sd[a-z]",
+    "format\\s+[a-z]:",
+    "rd\\s+/s\\s+/q\\s+[a-z]:\\\\?$",
+    "Remove-Item\\s+.*-Recurse.*[A-Z]:\\\\$",
+    "curl\\s+.*\\|\\s*(ba)?sh",
+    "wget\\s+.*\\|\\s*(ba)?sh",
+    "git\\s+push\\s+.*--force(?!-with-lease)\\s+.*main"
+   ],
+   "always_allow_commands": [
+    "ls",
+    "ll",
+    "dir",
+    "pwd",
+    "cd",
+    "cat",
+    "type",
+    "head",
+    "tail",
+    "echo",
+    "grep",
+    "rg",
+    "find",
+    "tree",
+    "wc",
+    "stat",
+    "file",
+    "git status",
+    "git log",
+    "git diff",
+    "git branch",
+    "git show",
+    "python --version",
+    "python3 --version",
+    "pip list",
+    "node --version"
+   ],
+   "sensitive_paths": [
+    "/etc",
+    "/root",
+    "/proc",
+    "/sys",
+    "/boot",
+    "/dev",
+    "/home/user/.ssh",
+    "/home/user/.aws",
+    "/home/user/.gnupg",
+    "C:\\Windows",
+    "C:\\Program Files"
+   ],
+   "max_file_write_bytes": 8000000,
+   "max_file_read_bytes": 2000000
+  },
+  "models": {
+   "active_id": "fed8dbbdd502",
+   "profiles": [
+    {
+     "id": "bda0cb1a6be0",
+     "name": "LM Studio (local)",
+     "kind": "api",
+     "provider_preset": "lmstudio",
+     "provider_label": "LM Studio",
+     "base_url": "http://localhost:1234/v1",
+     "api_key": "",
+     "model": "local-model",
+     "gguf_path": "",
+     "gguf_options": {},
+     "params": {},
+     "capabilities": {
+      "native_tools": true,
+      "context_window": 8192,
+      "vision": false,
+      "emulate_tool_role": true
+     },
+     "extra_headers": {},
+     "extra_body": {},
+     "enabled": true,
+     "favorite": false,
+     "color": "",
+     "notes": "Example profile. Start LM Studio's local server (port 1234) and load any model, or edit this one.",
+     "created_at": 1793109570.499921,
+     "updated_at": 1793109570.499921,
+     "last_used": null,
+     "usage_count": 0,
+     "api_key_masked": "",
+     "has_api_key": false
+    },
+    {
+     "id": "fed8dbbdd502",
+     "name": "Demo GPT-4o mini",
+     "kind": "api",
+     "provider_preset": "openai",
+     "provider_label": "OpenAI",
+     "base_url": "http://127.0.0.1:8601/v1",
+     "api_key": "",
+     "model": "mock-gpt",
+     "gguf_path": "",
+     "gguf_options": {},
+     "params": {
+      "temperature": 0.4,
+      "max_tokens": 1200
+     },
+     "capabilities": {
+      "native_tools": true,
+      "context_window": 8192,
+      "vision": false,
+      "emulate_tool_role": true
+     },
+     "extra_headers": {},
+     "extra_body": {},
+     "enabled": true,
+     "favorite": false,
+     "color": "",
+     "notes": "Fixture profile used by the front-end test harness.",
+     "created_at": 1793109570.532112,
+     "updated_at": 1793109570.532112,
+     "last_used": 1793109570.953496,
+     "usage_count": 1,
+     "api_key_masked": "sk-d******cdef",
+     "has_api_key": true
+    },
+    {
+     "id": "43775f146af7",
+     "name": "LM Studio (local)",
+     "kind": "api",
+     "provider_preset": "lmstudio",
+     "provider_label": "LM Studio",
+     "base_url": "http://localhost:1234/v1",
+     "api_key": "",
+     "model": "qwen2.5-coder-7b-instruct",
+     "gguf_path": "",
+     "gguf_options": {},
+     "params": {},
+     "capabilities": {
+      "native_tools": true,
+      "context_window": 32768,
+      "emulate_tool_role": true
+     },
+     "extra_headers": {},
+     "extra_body": {},
+     "enabled": true,
+     "favorite": false,
+     "color": "",
+     "notes": "",
+     "created_at": 1793109570.5377674,
+     "updated_at": 1793109570.5377674,
+     "last_used": null,
+     "usage_count": 0,
+     "api_key_masked": "",
+     "has_api_key": false
+    }
+   ],
+   "hide_keys": true
+  },
+  "gguf": {
+   "scan_dirs": [],
+   "n_ctx": 8192,
+   "n_gpu_layers": 0,
+   "n_threads": 0,
+   "n_batch": 512,
+   "chat_format": "auto",
+   "verbose": false,
+   "main_gpu": 0,
+   "use_mmap": true,
+   "use_mlock": false,
+   "seed": -1
+  },
+  "hotkeys": {
+   "send": "Enter",
+   "newline": "Shift+Enter",
+   "palette": "Ctrl+K",
+   "settings": "Ctrl+,",
+   "new_session": "Ctrl+N",
+   "switch_model": "Ctrl+M",
+   "stop_run": "Ctrl+.",
+   "focus_input": "Ctrl+L",
+   "toggle_sidebar": "Ctrl+B",
+   "toggle_monitor": "Ctrl+J",
+   "search_sessions": "Ctrl+F",
+   "regenerate": "Ctrl+R"
+  },
+  "chat": {
+   "attachments_as": "text",
+   "max_attachment_bytes": 400000,
+   "scroll_on_stream": true,
+   "send_on_enter": true
+  }
+ },
+ "defaults": {
+  "version": 6,
+  "app": {
+   "language": "ru",
+   "first_run_done": false,
+   "host": "127.0.0.1",
+   "port": 8420,
+   "open_on_start": true,
+   "window_mode": false,
+   "window_size": [
+    1440,
+    900
+   ],
+   "show_console": false,
+   "auto_update_check": false,
+   "dev_mode": false,
+   "token_secret": ""
+  },
+  "ui": {
+   "theme": "midnight",
+   "accent": "#7c5cff",
+   "custom_css": "",
+   "font_family": "system",
+   "font_size": 14.5,
+   "mono_font": "mono",
+   "density": "comfortable",
+   "animations": true,
+   "background_fx": "aurora",
+   "blur": true,
+   "corner_radius": 14,
+   "content_width": 860,
+   "sidebar_collapsed": false,
+   "show_monitor": true,
+   "monitor_tab": "activity",
+   "show_timestamps": true,
+   "show_avatars": true,
+   "show_token_stats": true,
+   "code_wrap": false,
+   "code_line_numbers": true,
+   "markdown": true,
+   "stream_smooth": true,
+   "sound": false,
+   "confirm_on_close": true,
+   "compact_tool_cards": false,
+   "message_spacing": 18
+  },
+  "workspace": {
+   "root": "",
+   "recent": [],
+   "sandbox": true,
+   "allow_read_outside": false,
+   "hidden_entries": [
+    ".git",
+    "node_modules",
+    "__pycache__",
+    ".venv",
+    "venv",
+    ".idea",
+    ".vscode",
+    "dist",
+    "build",
+    ".mypy_cache",
+    ".pytest_cache"
+   ],
+   "max_tree_files": 4000
+  },
+  "agent": {
+   "mode": "assistant",
+   "max_iterations": 15,
+   "temperature": 0.7,
+   "top_p": 0.95,
+   "top_k": 0,
+   "max_tokens": 2048,
+   "context_window": 8192,
+   "frequency_penalty": 0.0,
+   "presence_penalty": 0.0,
+   "repeat_penalty": 1.1,
+   "stop_sequences": [],
+   "stream": true,
+   "extra_system_prompt": "",
+   "memory_enabled": true,
+   "memory_file": "DAGENT_MEMORY.md",
+   "auto_title": true,
+   "compress_history": true,
+   "compress_ratio": 0.7,
+   "retry_on_error": 2,
+   "request_timeout": 300,
+   "show_reasoning": true,
+   "tool_protocol": "auto",
+   "include_environment": true,
+   "include_file_tree": false,
+   "seed": null
+  },
+  "security": {
+   "auto_approve": false,
+   "auto_approve_reads": true,
+   "confirm_timeout": 300,
+   "shell": "auto",
+   "custom_shell": "",
+   "command_timeout": 120,
+   "max_output_chars": 120000,
+   "allow_network_tools": true,
+   "allow_delete": true,
+   "confirm_delete": true,
+   "allow_python_exec": true,
+   "allow_write_outside_workspace": false,
+   "audit_log": true,
+   "denied_commands": [
+    "rm\\s+-rf\\s+/(?!home|tmp)\\S*",
+    ":\\(\\)\\s*\\{\\s*:\\|:&\\s*\\}\\s*;:",
+    "mkfs(\\.\\w+)?\\s",
+    "dd\\s+if=.*of=/dev/",
+    "shutdown|reboot|halt|poweroff",
+    "chmod\\s+-R\\s+777\\s+/",
+    ">\\s*/dev/sd[a-z]",
+    "format\\s+[a-z]:",
+    "rd\\s+/s\\s+/q\\s+[a-z]:\\\\?$",
+    "Remove-Item\\s+.*-Recurse.*[A-Z]:\\\\$",
+    "curl\\s+.*\\|\\s*(ba)?sh",
+    "wget\\s+.*\\|\\s*(ba)?sh",
+    "git\\s+push\\s+.*--force(?!-with-lease)\\s+.*main"
+   ],
+   "always_allow_commands": [
+    "ls",
+    "ll",
+    "dir",
+    "pwd",
+    "cd",
+    "cat",
+    "type",
+    "head",
+    "tail",
+    "echo",
+    "grep",
+    "rg",
+    "find",
+    "tree",
+    "wc",
+    "stat",
+    "file",
+    "git status",
+    "git log",
+    "git diff",
+    "git branch",
+    "git show",
+    "python --version",
+    "python3 --version",
+    "pip list",
+    "node --version"
+   ],
+   "sensitive_paths": [
+    "/etc",
+    "/root",
+    "/proc",
+    "/sys",
+    "/boot",
+    "/dev",
+    "/home/user/.ssh",
+    "/home/user/.aws",
+    "/home/user/.gnupg",
+    "C:\\Windows",
+    "C:\\Program Files"
+   ],
+   "max_file_write_bytes": 8000000,
+   "max_file_read_bytes": 2000000
+  },
+  "models": {
+   "active_id": null,
+   "profiles": [],
+   "hide_keys": true
+  },
+  "gguf": {
+   "scan_dirs": [],
+   "n_ctx": 8192,
+   "n_gpu_layers": 0,
+   "n_threads": 0,
+   "n_batch": 512,
+   "chat_format": "auto",
+   "verbose": false,
+   "main_gpu": 0,
+   "use_mmap": true,
+   "use_mlock": false,
+   "seed": -1
+  },
+  "hotkeys": {
+   "send": "Enter",
+   "newline": "Shift+Enter",
+   "palette": "Ctrl+K",
+   "settings": "Ctrl+,",
+   "new_session": "Ctrl+N",
+   "switch_model": "Ctrl+M",
+   "stop_run": "Ctrl+.",
+   "focus_input": "Ctrl+L",
+   "toggle_sidebar": "Ctrl+B",
+   "toggle_monitor": "Ctrl+J",
+   "search_sessions": "Ctrl+F",
+   "regenerate": "Ctrl+R"
+  },
+  "chat": {
+   "attachments_as": "text",
+   "max_attachment_bytes": 400000,
+   "scroll_on_stream": true,
+   "send_on_enter": true
+  }
+ },
+ "modes": [
+  {
+   "id": "chat",
+   "icon": "chat",
+   "name": "Общение",
+   "tagline": "Просто разговор, без доступа к системе",
+   "description": "Модель отвечает текстом и не может трогать файлы или запускать команды. Безопасный режим для вопросов, текстов, идей и перевода.",
+   "accent": "#4ea1ff",
+   "tools": [],
+   "auto_approve": false,
+   "defaults": {
+    "temperature": 0.8,
+    "max_iterations": 1,
+    "max_tokens": 2048
+   }
+  },
+  {
+   "id": "assistant",
+   "icon": "wand",
+   "name": "Ассистент",
+   "tagline": "Полный доступ, каждое действие подтверждается",
+   "description": "Агент умеет всё: читать и создавать файлы, запускать команды, искать в интернете. Опасные шаги показываются в окне подтверждения - вы всегда контролируете процесс.",
+   "accent": "#7c5cff",
+   "tools": [
+    "list_dir",
+    "read_file",
+    "file_info",
+    "search_files",
+    "workspace_tree",
+    "write_file",
+    "edit_file",
+    "create_dir",
+    "move_path",
+    "copy_path",
+    "remember",
+    "delete_path",
+    "run_command",
+    "python_run",
+    "web_fetch",
+    "ask_user",
+    "update_plan"
+   ],
+   "auto_approve": false,
+   "defaults": {
+    "temperature": 0.5,
+    "max_iterations": 12,
+    "max_tokens": 2048
+   }
+  },
+  {
+   "id": "autopilot",
+   "icon": "rocket",
+   "name": "Автопилот",
+   "tagline": "Работает сам, без остановок на подтверждения",
+   "description": "Агент выполняет длинные задачи самостоятельно: много шагов, файлов и команд подряд. Запрещённые команды и выход за пределы рабочей папки всё равно блокируются.",
+   "accent": "#ff7a45",
+   "tools": [
+    "list_dir",
+    "read_file",
+    "file_info",
+    "search_files",
+    "workspace_tree",
+    "write_file",
+    "edit_file",
+    "create_dir",
+    "move_path",
+    "copy_path",
+    "remember",
+    "delete_path",
+    "run_command",
+    "python_run",
+    "web_fetch",
+    "update_plan"
+   ],
+   "auto_approve": true,
+   "defaults": {
+    "temperature": 0.4,
+    "max_iterations": 30,
+    "max_tokens": 3072
+   }
+  },
+  {
+   "id": "code",
+   "icon": "code",
+   "name": "Код",
+   "tagline": "Разработка: анализ проекта, правки, тесты, git",
+   "description": "Режим программиста. Агент изучает структуру проекта, пишет и рефакторит код, запускает тесты и сборку, работает с git - и объясняет каждое изменение.",
+   "accent": "#35d07f",
+   "tools": [
+    "list_dir",
+    "read_file",
+    "file_info",
+    "search_files",
+    "workspace_tree",
+    "write_file",
+    "edit_file",
+    "create_dir",
+    "move_path",
+    "copy_path",
+    "remember",
+    "delete_path",
+    "run_command",
+    "python_run",
+    "ask_user",
+    "update_plan"
+   ],
+   "auto_approve": false,
+   "defaults": {
+    "temperature": 0.25,
+    "max_iterations": 25,
+    "max_tokens": 4096
+   }
+  },
+  {
+   "id": "terminal",
+   "icon": "terminal",
+   "name": "Терминал",
+   "tagline": "Команды, установка, диагностика системы",
+   "description": "Упор на консоль: агент строит цепочки команд, ставит пакеты, ищет ошибки в логах и настраивает окружение. Файлы редактирует только когда это нужно.",
+   "accent": "#00c2a8",
+   "tools": [
+    "list_dir",
+    "read_file",
+    "file_info",
+    "search_files",
+    "workspace_tree",
+    "run_command",
+    "python_run",
+    "write_file",
+    "edit_file",
+    "create_dir",
+    "move_path",
+    "copy_path",
+    "remember",
+    "web_fetch",
+    "ask_user",
+    "update_plan"
+   ],
+   "auto_approve": false,
+   "defaults": {
+    "temperature": 0.2,
+    "max_iterations": 20,
+    "max_tokens": 2048
+   }
+  },
+  {
+   "id": "analyst",
+   "icon": "search",
+   "name": "Аналитик",
+   "tagline": "Только чтение: исследование и отчёты",
+   "description": "Агент читает файлы, ищет по содержимому и собирает выводы в отчёт. Ничего не изменяет и не удаляет - идеально для аудита и знакомства с проектом.",
+   "accent": "#f5b942",
+   "tools": [
+    "list_dir",
+    "read_file",
+    "file_info",
+    "search_files",
+    "workspace_tree",
+    "web_fetch",
+    "remember",
+    "update_plan"
+   ],
+   "auto_approve": true,
+   "defaults": {
+    "temperature": 0.3,
+    "max_iterations": 15,
+    "max_tokens": 3072
+   }
+  }
+ ],
+ "active_model": {
+  "id": "fed8dbbdd502",
+  "name": "Demo GPT-4o mini",
+  "kind": "api",
+  "provider_preset": "openai",
+  "provider_label": "OpenAI",
+  "base_url": "http://127.0.0.1:8601/v1",
+  "api_key": "",
+  "model": "mock-gpt",
+  "gguf_path": "",
+  "gguf_options": {},
+  "params": {
+   "temperature": 0.4,
+   "max_tokens": 1200
+  },
+  "capabilities": {
+   "native_tools": true,
+   "context_window": 8192,
+   "vision": false,
+   "emulate_tool_role": true
+  },
+  "extra_headers": {},
+  "extra_body": {},
+  "enabled": true,
+  "favorite": false,
+  "color": "",
+  "notes": "Fixture profile used by the front-end test harness.",
+  "created_at": 1793109570.532112,
+  "updated_at": 1793109570.532112,
+  "last_used": 1793109570.953496,
+  "usage_count": 1,
+  "api_key_masked": "sk-d******cdef",
+  "has_api_key": true
+ },
+ "models": [
+  {
+   "id": "bda0cb1a6be0",
+   "name": "LM Studio (local)",
+   "kind": "api",
+   "provider_preset": "lmstudio",
+   "provider_label": "LM Studio",
+   "base_url": "http://localhost:1234/v1",
+   "api_key": "",
+   "model": "local-model",
+   "gguf_path": "",
+   "gguf_options": {},
+   "params": {},
+   "capabilities": {
+    "native_tools": true,
+    "context_window": 8192,
+    "vision": false,
+    "emulate_tool_role": true
+   },
+   "extra_headers": {},
+   "extra_body": {},
+   "enabled": true,
+   "favorite": false,
+   "color": "",
+   "notes": "Example profile. Start LM Studio's local server (port 1234) and load any model, or edit this one.",
+   "created_at": 1793109570.499921,
+   "updated_at": 1793109570.499921,
+   "last_used": null,
+   "usage_count": 0,
+   "api_key_masked": "",
+   "has_api_key": false
+  },
+  {
+   "id": "fed8dbbdd502",
+   "name": "Demo GPT-4o mini",
+   "kind": "api",
+   "provider_preset": "openai",
+   "provider_label": "OpenAI",
+   "base_url": "http://127.0.0.1:8601/v1",
+   "api_key": "",
+   "model": "mock-gpt",
+   "gguf_path": "",
+   "gguf_options": {},
+   "params": {
+    "temperature": 0.4,
+    "max_tokens": 1200
+   },
+   "capabilities": {
+    "native_tools": true,
+    "context_window": 8192,
+    "vision": false,
+    "emulate_tool_role": true
+   },
+   "extra_headers": {},
+   "extra_body": {},
+   "enabled": true,
+   "favorite": false,
+   "color": "",
+   "notes": "Fixture profile used by the front-end test harness.",
+   "created_at": 1793109570.532112,
+   "updated_at": 1793109570.532112,
+   "last_used": 1793109570.953496,
+   "usage_count": 1,
+   "api_key_masked": "",
+   "has_api_key": false
+  },
+  {
+   "id": "43775f146af7",
+   "name": "LM Studio (local)",
+   "kind": "api",
+   "provider_preset": "lmstudio",
+   "provider_label": "LM Studio",
+   "base_url": "http://localhost:1234/v1",
+   "api_key": "",
+   "model": "qwen2.5-coder-7b-instruct",
+   "gguf_path": "",
+   "gguf_options": {},
+   "params": {},
+   "capabilities": {
+    "native_tools": true,
+    "context_window": 32768,
+    "emulate_tool_role": true
+   },
+   "extra_headers": {},
+   "extra_body": {},
+   "enabled": true,
+   "favorite": false,
+   "color": "",
+   "notes": "",
+   "created_at": 1793109570.5377674,
+   "updated_at": 1793109570.5377674,
+   "last_used": null,
+   "usage_count": 0,
+   "api_key_masked": "",
+   "has_api_key": false
+  }
+ ],
+ "sessions": [
+  {
+   "id": "a8827de284d14515",
+   "title": "Анализ проекта",
+   "created_at": 1793109570.5667226,
+   "updated_at": 1793109570.9543557,
+   "model_id": "fed8dbbdd502",
+   "mode": "assistant",
+   "workspace": "/home/demo/DAGENTWorkspace",
+   "pinned": 0,
+   "archived": 0,
+   "tags": [],
+   "stats": {
+    "messages": 8,
+    "chars": 333,
+    "tokens": 1120,
+    "last_run_tokens": 1120
+   },
+   "meta": {
+    "plan": [
+     {
+      "title": "Изучить структуру проекта",
+      "status": "done",
+      "detail": ""
+     },
+     {
+      "title": "Прочитать src/main.py",
+      "status": "done",
+      "detail": ""
+     },
+     {
+      "title": "Запустить скрипт и проверить вывод",
+      "status": "in_progress",
+      "detail": ""
+     },
+     {
+      "title": "Написать отчёт docs/report.md",
+      "status": "pending",
+      "detail": ""
+     }
+    ]
+   },
+   "msg_count": 8
+  }
+ ],
+ "session_count": 1,
+ "tools": [
+  {
+   "name": "run_command",
+   "description": "Run a shell command on the user's machine inside the current workspace and return its output. Use it for builds, tests, git, package managers and diagnostics. Long output is trimmed.",
+   "category": "system",
+   "render": "command",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "command": {
+      "type": "string",
+      "description": "Full command line, e.g. 'git status' or 'npm run build'"
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Optional working directory (relative to the workspace)"
+     },
+     "timeout": {
+      "type": "integer",
+      "description": "Timeout in seconds (default 120)"
+     }
+    },
+    "required": [
+     "command"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "python_run",
+   "description": "Execute a Python snippet with the interpreter DAGENT runs on. Good for calculations, data processing and quick scripts.",
+   "category": "code",
+   "render": "command",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "code": {
+      "type": "string",
+      "description": "Python source code to execute"
+     },
+     "timeout": {
+      "type": "integer",
+      "description": "Timeout in seconds (default 60)"
+     },
+     "keep_file": {
+      "type": "boolean",
+      "description": "Keep the temporary script file after running"
+     }
+    },
+    "required": [
+     "code"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "read_file",
+   "description": "Read a text file from the workspace and return it with line numbers. Always read a file before editing it.",
+   "category": "files",
+   "render": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "path": {
+      "type": "string",
+      "description": "File path relative to the workspace (or absolute)"
+     },
+     "start_line": {
+      "type": "integer",
+      "description": "First line to return (1-based)"
+     },
+     "max_lines": {
+      "type": "integer",
+      "description": "Maximum number of lines to return (default 2000)"
+     }
+    },
+    "required": [
+     "path"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "write_file",
+   "description": "Create a new file or replace/append to an existing one. Parent folders are created automatically.",
+   "category": "files",
+   "render": "diff",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "path": {
+      "type": "string",
+      "description": "File path relative to the workspace"
+     },
+     "content": {
+      "type": "string",
+      "description": "Full file content to write"
+     },
+     "mode": {
+      "type": "string",
+      "enum": [
+       "overwrite",
+       "append"
+      ],
+      "description": "Write mode (default overwrite)"
+     },
+     "create_dirs": {
+      "type": "boolean",
+      "description": "Create missing parent directories (default true)"
+     }
+    },
+    "required": [
+     "path",
+     "content"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "edit_file",
+   "description": "Replace an exact piece of text inside a file. Provide enough surrounding context so the match is unique. Preferred over write_file for existing files.",
+   "category": "files",
+   "render": "diff",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "path": {
+      "type": "string",
+      "description": "File path relative to the workspace"
+     },
+     "old_text": {
+      "type": "string",
+      "description": "Exact text to find (copy it from read_file output)"
+     },
+     "new_text": {
+      "type": "string",
+      "description": "Replacement text"
+     },
+     "replace_all": {
+      "type": "boolean",
+      "description": "Replace every occurrence instead of the first one"
+     }
+    },
+    "required": [
+     "path",
+     "old_text",
+     "new_text"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "delete_path",
+   "description": "Delete a file or (with recursive=true) a folder. This needs user confirmation unless autopilot is on.",
+   "category": "files",
+   "render": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "path": {
+      "type": "string",
+      "description": "Path to delete"
+     },
+     "recursive": {
+      "type": "boolean",
+      "description": "Delete folders with their content"
+     }
+    },
+    "required": [
+     "path"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "create_dir",
+   "description": "Create a directory (including all missing parents).",
+   "category": "files",
+   "render": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "path": {
+      "type": "string",
+      "description": "Directory path"
+     }
+    },
+    "required": [
+     "path"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "move_path",
+   "description": "Move or rename a file/folder.",
+   "category": "files",
+   "render": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "source": {
+      "type": "string",
+      "description": "Current path"
+     },
+     "destination": {
+      "type": "string",
+      "description": "New path"
+     }
+    },
+    "required": [
+     "source",
+     "destination"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "copy_path",
+   "description": "Copy a file or folder to another location.",
+   "category": "files",
+   "render": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "source": {
+      "type": "string",
+      "description": "Path to copy from"
+     },
+     "destination": {
+      "type": "string",
+      "description": "Path to copy to"
+     }
+    },
+    "required": [
+     "source",
+     "destination"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "list_dir",
+   "description": "List files and folders. Use recursive=true with depth to explore a subtree.",
+   "category": "files",
+   "render": "list",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "path": {
+      "type": "string",
+      "description": "Directory to list (default: workspace root)"
+     },
+     "recursive": {
+      "type": "boolean",
+      "description": "Walk into subfolders"
+     },
+     "depth": {
+      "type": "integer",
+      "description": "Maximum depth when recursive"
+     },
+     "pattern": {
+      "type": "string",
+      "description": "Glob filter for names, e.g. '*.py'"
+     },
+     "show_hidden": {
+      "type": "boolean",
+      "description": "Include dot-files and ignored folders"
+     },
+     "limit": {
+      "type": "integer",
+      "description": "Maximum entries to return"
+     }
+    },
+    "required": [],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "file_info",
+   "description": "Show metadata for a path: size, type, timestamps, permissions.",
+   "category": "files",
+   "render": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "path": {
+      "type": "string",
+      "description": "File or folder path"
+     }
+    },
+    "required": [
+     "path"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "search_files",
+   "description": "Search file contents (regex by default) or file names across the workspace and return matching lines.",
+   "category": "files",
+   "render": "search",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "pattern": {
+      "type": "string",
+      "description": "Regex or literal text to find"
+     },
+     "path": {
+      "type": "string",
+      "description": "Folder to search in (default: workspace root)"
+     },
+     "include": {
+      "type": "string",
+      "description": "Glob for file names, e.g. '*.py' (default all)"
+     },
+     "exclude": {
+      "type": "string",
+      "description": "Glob to skip, e.g. '*.min.js'"
+     },
+     "by_name": {
+      "type": "boolean",
+      "description": "Match file names instead of contents"
+     },
+     "regex": {
+      "type": "boolean",
+      "description": "Treat pattern as a regular expression (default true)"
+     },
+     "ignore_case": {
+      "type": "boolean",
+      "description": "Case-insensitive search (default true)"
+     },
+     "max_results": {
+      "type": "integer",
+      "description": "Maximum matches to return (default 50)"
+     }
+    },
+    "required": [
+     "pattern"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "workspace_tree",
+   "description": "Print a compact tree of the workspace - the fastest way to understand a project layout.",
+   "category": "files",
+   "render": "tree",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "depth": {
+      "type": "integer",
+      "description": "Tree depth (default 3)"
+     }
+    },
+    "required": [],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "web_fetch",
+   "description": "Download a web page or JSON endpoint and return its readable text content.",
+   "category": "web",
+   "render": "web",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "url": {
+      "type": "string",
+      "description": "URL to fetch (http/https)"
+     },
+     "max_chars": {
+      "type": "integer",
+      "description": "Maximum characters to return (default 12000)"
+     }
+    },
+    "required": [
+     "url"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "ask_user",
+   "description": "Ask the user a question and wait for the answer. Use it when a decision is ambiguous or a choice is needed (for example which variant to implement, or missing credentials).",
+   "category": "meta",
+   "render": "question",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "question": {
+      "type": "string",
+      "description": "The question to show"
+     },
+     "options": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "description": "Optional list of suggested answers"
+     },
+     "allow_text": {
+      "type": "boolean",
+      "description": "Allow a free-form text answer (default true)"
+     }
+    },
+    "required": [
+     "question"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "remember",
+   "description": "Save a durable note (user preference, project fact, decision) into the workspace memory file so future sessions remember it.",
+   "category": "meta",
+   "render": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "text": {
+      "type": "string",
+      "description": "What to remember"
+     },
+     "tag": {
+      "type": "string",
+      "description": "Short category, e.g. 'preference', 'project', 'decision'"
+     }
+    },
+    "required": [
+     "text"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "update_plan",
+   "description": "Create or update the visible step plan for a complex task. Call it once at the start with all steps, then again with status='done' as steps complete. The user sees it as a live checklist.",
+   "category": "meta",
+   "render": "plan",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "steps": {
+      "type": "array",
+      "description": "Ordered plan steps",
+      "items": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "type": "string",
+         "description": "Short step title"
+        },
+        "status": {
+         "type": "string",
+         "enum": [
+          "pending",
+          "active",
+          "done",
+          "skipped"
+         ]
+        },
+        "detail": {
+         "type": "string",
+         "description": "Optional extra info"
+        }
+       },
+       "required": [
+        "title",
+        "status"
+       ]
+      }
+     }
+    },
+    "required": [
+     "steps"
+    ],
+    "additionalProperties": false
+   }
+  }
+ ],
+ "providers": {
+  "llama_cpp_installed": false,
+  "llama_cpp_version": "",
+  "llama_cpp_hint": "llama-cpp-python is not installed. Run one of:\n  CPU:      pip install llama-cpp-python\n  CUDA:     CMAKE_ARGS='-DGGML_CUDA=on' pip install llama-cpp-python --upgrade --force-reinstall\n  macOS ML: CMAKE_ARGS='-DGGML_METAL=on' pip install llama-cpp-python --upgrade --force-reinstall\nNo compiler? Use a local server instead: LM Studio, Ollama or llama.cpp server and add the model as an 'API' profile (http://localhost:1234/v1).",
+  "loaded_gguf": [],
+  "presets": [
+   {
+    "id": "openai",
+    "base_url": "https://api.openai.com/v1",
+    "label": "OpenAI",
+    "native_tools": true
+   },
+   {
+    "id": "openrouter",
+    "base_url": "https://openrouter.ai/api/v1",
+    "label": "OpenRouter",
+    "native_tools": true
+   },
+   {
+    "id": "deepseek",
+    "base_url": "https://api.deepseek.com/v1",
+    "label": "DeepSeek",
+    "native_tools": true
+   },
+   {
+    "id": "groq",
+    "base_url": "https://api.groq.com/openai/v1",
+    "label": "Groq",
+    "native_tools": true
+   },
+   {
+    "id": "mistral",
+    "base_url": "https://api.mistral.ai/v1",
+    "label": "Mistral AI",
+    "native_tools": true
+   },
+   {
+    "id": "together",
+    "base_url": "https://api.together.xyz/v1",
+    "label": "Together AI",
+    "native_tools": true
+   },
+   {
+    "id": "fireworks",
+    "base_url": "https://api.fireworks.ai/inference/v1",
+    "label": "Fireworks",
+    "native_tools": true
+   },
+   {
+    "id": "anthropic_proxy",
+    "base_url": "https://api.anthropic.com/v1",
+    "label": "Anthropic (proxy)",
+    "native_tools": true
+   },
+   {
+    "id": "xai",
+    "base_url": "https://api.x.ai/v1",
+    "label": "xAI (Grok)",
+    "native_tools": true
+   },
+   {
+    "id": "moonshot",
+    "base_url": "https://api.moonshot.ai/v1",
+    "label": "Moonshot",
+    "native_tools": true
+   },
+   {
+    "id": "qwen",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "label": "Qwen / DashScope",
+    "native_tools": true
+   },
+   {
+    "id": "siliconflow",
+    "base_url": "https://api.siliconflow.cn/v1",
+    "label": "SiliconFlow",
+    "native_tools": true
+   },
+   {
+    "id": "lmstudio",
+    "base_url": "http://localhost:1234/v1",
+    "label": "LM Studio",
+    "native_tools": true
+   },
+   {
+    "id": "ollama",
+    "base_url": "http://localhost:11434/v1",
+    "label": "Ollama",
+    "native_tools": false
+   },
+   {
+    "id": "llamacpp",
+    "base_url": "http://localhost:8080/v1",
+    "label": "llama.cpp server",
+    "native_tools": false
+   },
+   {
+    "id": "vllm",
+    "base_url": "http://localhost:8000/v1",
+    "label": "vLLM",
+    "native_tools": true
+   },
+   {
+    "id": "koboldcpp",
+    "base_url": "http://localhost:5001/v1",
+    "label": "KoboldCpp",
+    "native_tools": false
+   },
+   {
+    "id": "custom",
+    "base_url": "",
+    "label": "Custom / self-hosted",
+    "native_tools": null
+   }
+  ]
+ },
+ "workspace": {
+  "root": "/home/demo/DAGENTWorkspace",
+  "exists": true,
+  "name": "dagent-fixtures-ws-ee4sodwf",
+  "is_git": false,
+  "recent": [],
+  "sandbox": true,
+  "entries": 3,
+  "size_bytes": 422
+ },
+ "system": {
+  "os": "Linux",
+  "os_release": "6.1.158+",
+  "machine": "x86_64",
+  "python": "3.11.2",
+  "hostname": "e2b.local",
+  "user": "user",
+  "cpu_count": 2,
+  "memory": {
+   "total_mb": 3939,
+   "available_mb": 3628
+  },
+  "disk": {
+   "total_gb": 20.3,
+   "free_gb": 19.2
+  },
+  "data_dir": "/home/demo/.dagent"
+ },
+ "info": {
+  "uptime_seconds": 0,
+  "workspace": "/home/demo/DAGENTWorkspace",
+  "sessions": 1,
+  "messages": 8,
+  "active_runs": [],
+  "runs": 1,
+  "tool_calls": 0,
+  "errors": 0
+ },
+ "hotkeys": {
+  "send": "Enter",
+  "newline": "Shift+Enter",
+  "palette": "Ctrl+K",
+  "settings": "Ctrl+,",
+  "new_session": "Ctrl+N",
+  "switch_model": "Ctrl+M",
+  "stop_run": "Ctrl+.",
+  "focus_input": "Ctrl+L",
+  "toggle_sidebar": "Ctrl+B",
+  "toggle_monitor": "Ctrl+J",
+  "search_sessions": "Ctrl+F",
+  "regenerate": "Ctrl+R"
+ },
+ "pending": []
+}
